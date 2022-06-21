@@ -1,25 +1,22 @@
-import React from "react";
-import { Channel, useChatContext} from "stream-chat-react";
+import React from 'react';
+import { Channel, MessageTeam } from 'stream-chat-react';
 
-import { ChannelInner, CreateChannel, EditChannel, TeamMessage} from './';
+import { ChannelInner, CreateChannel, EditChannel } from './';
 
 const ChannelContainer = ({ isCreating, setIsCreating, isEditing, setIsEditing, createType }) => {
-    // info about the current channel
-    const { channel } = useChatContext();
-// create process
     if(isCreating) {
         return (
             <div className="channel__container">
-                <CreateChannel createType = {createType} setIsCreating = { setIsCreating}/>
+                <CreateChannel createType={createType} setIsCreating={setIsCreating} />
             </div>
         )
     }
-// editing process
+
     if(isEditing) {
         return (
             <div className="channel__container">
-                <EditChannel setIsEditing = {setIsEditing}/>
-            </div>
+                <EditChannel setIsEditing={setIsEditing} />
+            </div> 
         )
     }
 
@@ -29,13 +26,14 @@ const ChannelContainer = ({ isCreating, setIsCreating, isEditing, setIsEditing, 
             <p className="channel-empty__second">Send messages, attachments, links, emojis, and more!</p>
         </div>
     )
+
     return (
-        <div className="channel__container">
-            <Channel 
-            EmptyStateIndicator={EmptyState}
-            Message={(messageProps, i )=> <TeamMessage key={i} {...messageProps} />}
+        <div className=" channel__container">
+            <Channel
+                EmptyStateIndicator={EmptyState}
+                Message={(messageProps, i) => <MessageTeam key={i} {...messageProps} />}
             >
-                <ChannelInner setIsEditing={setIsEditing}/>
+                <ChannelInner setIsEditing={setIsEditing} />
             </Channel>
         </div>
     );
