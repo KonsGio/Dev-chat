@@ -6,8 +6,13 @@ import signinImage from '../assets/signup.jpg';
 // Firstly  we created our labels and gave them access to App.css with bem methodology
 // Then we differentiated sign up and sign in 'divs'
 // We added redirection from sign up to sign in and vise versa
+// Created initial states and then built the calls from users
+// Submit and login handlers (async methods)
+
+const cookies = new Cookies();
+
 const initialState = {
-    fullname: '',
+    fullName: '',
     username: '',
     password: '',
     confirmPassword: '',
@@ -21,12 +26,30 @@ const Auth = () => {
 
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        
-        console.log(form)
+// Get data from form submission
+        const { fullName, username, password, phoneNumber, avatarURL } = form;
+        const URL = 'http://localhost:5000/auth';
+// Request to the backend to different URL each time dependent on login or signup
+        const {data: {token, userId, hashedPassword}} = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
+            username, password, fullName, phoneNumber, avatarURL,
+        });
+// Store data that we get back into cookies
+        cookies.set('token', token);
+        cookies.set('username', username);
+        cookies.set('fullName', fullName);
+        cookies.set('userId', userId);
+
+        if(isSignup){
+        cookies.set('phoneNumber', phoneNumber);
+        cookies.set('avatarURL', avatarURL);
+        cookies.set('hashedPassword', hashedPassword);
+        }
+// after cookies we reload the browser
+        window.location.reload();
     }
-    // const equal to a function 
+// const equal to a function 
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
     }
