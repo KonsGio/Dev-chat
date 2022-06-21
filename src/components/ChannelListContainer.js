@@ -28,6 +28,7 @@ const CompanyHeader = () => (
         <p className="channel-list__header__text">Medical Pager</p>
     </div>
 )
+
 const ChannelListContainer = () => {
     const logout = () => {
         cookies.remove("token");
