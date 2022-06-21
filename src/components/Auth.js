@@ -6,9 +6,26 @@ import signinImage from '../assets/signup.jpg';
 // Firstly  we created our labels and gave them access to App.css with bem methodology
 // Then we differentiated sign up and sign in 'divs'
 // We added redirection from sign up to sign in and vise versa
+const initialState = {
+    fullname: '',
+    username: '',
+    password: '',
+    confirmPassword: '',
+    avatarURL: '',
+}
 const Auth = () => {
+    const [form, setForm] = useState(initialState);
     const [isSignup, setIsSignup] = useState(true);
-    const handleChange = () => {}
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value});
+
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        console.log(form)
+    }
     // const equal to a function 
     const switchMode = () => {
         setIsSignup((prevIsSignup) => !prevIsSignup);
@@ -18,7 +35,7 @@ const Auth = () => {
             <div className="auth__form-container_fields">
                 <div className="auth__form-container_fields-content">
                     <p>{isSignup ? 'Sign up' : 'Sign in'}</p>
-                    <form onSubmit={() => {}}> 
+                    <form onSubmit={handleSubmit}> 
                         {isSignup && (
                             // signup full name
                             <div className="auth__form-container_fields-content_input">
@@ -89,6 +106,9 @@ const Auth = () => {
                                     />
                             </div>
                         )}
+                        <div className="auth__form-container_fields-content_button">
+                            <button>{isSignup ? "Sign up" : "Sign in"}</button>
+                        </div>
                     </form>
                     <div className="auth__form-container_fields-account">
                         <p>
@@ -102,6 +122,9 @@ const Auth = () => {
                         </p>
                     </div>
                 </div>
+            </div>
+            <div className="auth__form-container-image">
+                <img src={signinImage} alt='sign in' />
             </div>
         </div>
     )
