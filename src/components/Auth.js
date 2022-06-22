@@ -16,6 +16,7 @@ const initialState = {
     username: '',
     password: '',
     confirmPassword: '',
+    phoneNumber: '',
     avatarURL: '',
 }
 const Auth = () => {
@@ -29,11 +30,11 @@ const Auth = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();
 // Get data from form submission
-        const { fullName, username, password, phoneNumber, avatarURL } = form;
+        const {username, password, phoneNumber, avatarURL } = form;
         const URL = 'http://localhost:5000/auth';
 // Request to the backend to different URL each time dependent on login or signup
-        const {data: {token, userId, hashedPassword}} = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
-            username, password, fullName, phoneNumber, avatarURL,
+        const {data: {token, userId, hashedPassword, fullName}} = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
+            username, password, fullName: form.fullName, phoneNumber, avatarURL,
         });
 // Store data that we get back into cookies
         cookies.set('token', token);
@@ -62,9 +63,9 @@ const Auth = () => {
                         {isSignup && (
                             // signup full name
                             <div className="auth__form-container_fields-content_input">
-                                <label htmlFor = "fullname">Full Name</label>
+                                <label htmlFor = "fullName">Full Name</label>
                                 <input 
-                                    name="fullname"     
+                                    name="fullName"     
                                     type="text"
                                     placeholder="Full Name"
                                     onChange={handleChange}
@@ -78,7 +79,7 @@ const Auth = () => {
                                 <input 
                                     name="username"     
                                     type="text"
-                                    placeholder="username"
+                                    placeholder="Username"
                                     onChange={handleChange}
                                     required
                                     />
@@ -111,7 +112,7 @@ const Auth = () => {
                                 <label htmlFor = "password">Password</label>
                                 <input 
                                     name="password"     
-                                    type="text"
+                                    type="password"
                                     placeholder="Password"
                                     onChange={handleChange}
                                     required
@@ -122,7 +123,7 @@ const Auth = () => {
                                 <label htmlFor = "confirmPassword">Confirm Password</label>
                                 <input 
                                     name="confirmPassword"     
-                                    type="text"
+                                    type="password"
                                     placeholder="Confirm Password"
                                     onChange={handleChange}
                                     required

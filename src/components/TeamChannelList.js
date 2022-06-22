@@ -29,6 +29,7 @@ const TeamChannelList = ({ setToggleContainer, children, error = false, loading,
                 <p className="team-channel-list__header__title">
                     {type === 'team' ? 'Channels' : 'Direct Messages'}
                 </p>
+                {/* Addchannel component call */}
                 <AddChannel 
                     isCreating={isCreating}
                     setIsCreating={setIsCreating}
