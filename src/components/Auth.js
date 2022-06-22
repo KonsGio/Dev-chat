@@ -31,7 +31,7 @@ const Auth = () => {
         e.preventDefault();
 // Get data from form submission
         const {username, password, phoneNumber, avatarURL } = form;
-        const URL = 'http://localhost:5000/auth';
+        const URL = 'https://work-chat-dev-kgio.herokuapp.com/auth';
 // Request to the backend to different URL each time dependent on login or signup
         const {data: {token, userId, hashedPassword, fullName}} = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`,{
             username, password, fullName: form.fullName, phoneNumber, avatarURL,
@@ -58,97 +58,95 @@ const Auth = () => {
         <div className="auth__form-container">
             <div className="auth__form-container_fields">
                 <div className="auth__form-container_fields-content">
-                    <p>{isSignup ? 'Sign up' : 'Sign in'}</p>
-                    <form onSubmit={handleSubmit}> 
+                    <p>{isSignup ? 'Sign Up' : 'Sign In'}</p>
+                    <form onSubmit={handleSubmit}>
                         {isSignup && (
-                            // signup full name
                             <div className="auth__form-container_fields-content_input">
-                                <label htmlFor = "fullName">Full Name</label>
+                                <label htmlFor="fullName">Full Name</label>
                                 <input 
-                                    name="fullName"     
+                                    name="fullName" 
                                     type="text"
                                     placeholder="Full Name"
                                     onChange={handleChange}
                                     required
-                                    />
+                                />
                             </div>
                         )}
-                        {/* sign up username */}
                         <div className="auth__form-container_fields-content_input">
-                                <label htmlFor = "username">Username</label>
+                            <label htmlFor="username">Username</label>
                                 <input 
-                                    name="username"     
+                                    name="username" 
                                     type="text"
                                     placeholder="Username"
                                     onChange={handleChange}
                                     required
-                                    />
+                                />
                             </div>
                         {isSignup && (
                             <div className="auth__form-container_fields-content_input">
-                                <label htmlFor = "phoneNumber">Phone number</label>
+                                <label htmlFor="phoneNumber">Phone Number</label>
                                 <input 
-                                    name="phoneNumber"     
+                                    name="phoneNumber" 
                                     type="text"
                                     placeholder="Phone Number"
                                     onChange={handleChange}
                                     required
-                                    />
+                                />
                             </div>
                         )}
                         {isSignup && (
                             <div className="auth__form-container_fields-content_input">
-                                <label htmlFor = "avatarURL">Avatar URL</label>
+                                <label htmlFor="avatarURL">Avatar URL</label>
                                 <input 
-                                    name="avatarURL"     
+                                    name="avatarURL" 
                                     type="text"
                                     placeholder="Avatar URL"
                                     onChange={handleChange}
                                     required
-                                    />
+                                />
                             </div>
                         )}
                         <div className="auth__form-container_fields-content_input">
-                                <label htmlFor = "password">Password</label>
+                                <label htmlFor="password">Password</label>
                                 <input 
-                                    name="password"     
+                                    name="password" 
                                     type="password"
                                     placeholder="Password"
                                     onChange={handleChange}
                                     required
-                                    />
+                                />
                             </div>
-                            {isSignup && (
+                        {isSignup && (
                             <div className="auth__form-container_fields-content_input">
-                                <label htmlFor = "confirmPassword">Confirm Password</label>
+                                <label htmlFor="confirmPassword">Confirm Password</label>
                                 <input 
-                                    name="confirmPassword"     
+                                    name="confirmPassword" 
                                     type="password"
                                     placeholder="Confirm Password"
                                     onChange={handleChange}
                                     required
-                                    />
+                                />
                             </div>
-                        )}
+                            )}
                         <div className="auth__form-container_fields-content_button">
-                            <button>{isSignup ? "Sign up" : "Sign in"}</button>
+                            <button>{isSignup ? "Sign Up" : "Sign In"}</button>
                         </div>
                     </form>
                     <div className="auth__form-container_fields-account">
                         <p>
-                            {isSignup 
-                            ? "Already have an account?"
-                            : "You don't have an account! Create one "
-                            }
-                            <span onClick={switchMode}>
-                                {isSignup ? 'Sign in' : 'Sign Up'}
-                            </span>
+                            {isSignup
+                             ? "Already have an account?" 
+                             : "Don't have an account?"
+                             }
+                             <span onClick={switchMode}>
+                             {isSignup ? 'Sign In' : 'Sign Up'}
+                             </span>
                         </p>
                     </div>
-                </div>
+                </div> 
             </div>
-            <div className="auth__form-container-image">
-                <img src={signinImage} alt='sign in' />
+            <div className="auth__form-container_image">
+                <img src={signinImage} alt="sign in" />
             </div>
         </div>
     )
