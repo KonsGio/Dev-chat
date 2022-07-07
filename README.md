@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+<div id="top"></div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/KonsGio/Dev-chat">
+    <img src="public/icon.png" alt="Logo" width="150" height="120">
+  </a>
+<h3 align="center">Dev chat application </h3>
+  <p align="center">
+    A chat application with sign up and log in features. A database hosted in <a href="https://getstream.io/chat/">stream.io</a> is used for user logs. Also the application is set up with <a href="https://www.twilio.com">Twilio</a>, which sends sms notifications to the user when they have a new message (under debugging).
+    <br />
+    <a href="https://github.com/KonsGio/Dev-chat"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://kgio-dev-chat-app.netlify.app">View Demo</a>
+    ·
+    <a href="https://github.com/KonsGio/Dev-chat/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/KonsGio/Dev-chat/issues">Request Feature</a>
+  </p>
+</div>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[![https://kgio.dev][product-screenshot]](https://kgio.dev)
 
-### `npm test`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Built With
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [![React][React.js]][React-url]
+* [![TYPESCRIPT][TYPESCRIPT]][TYPESCRIPT-url]
+* [![POSTCSS][POSTCSS]][POSTCSS-url]
+* [![STREAM][STREAM]][STREAM-url]
+* [![TWILIO][TWILIO]][TWILIO-url]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Check this out
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* [![KGIO.DEV][SITE]][SITE-url]
+* [![LinkedIn][linkedin-shield]][linkedin-url]
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+<!-- LICENSE -->
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Distributed under the Apache License 2.0. See `LICENSE.txt` for more information.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+<!-- CONTACT -->
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Konstantinos Giovanitsas - <a href="mailto:konstantinos.giovanitsas@yahoo.com">Send me an email</a>
 
-### Making a Progressive Web App
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/konstantinos-giovanitsas-10b511150/
+[product-screenshot]: public/dev-chat.png
+[SITE]: https://img.shields.io/badge/kgio.dev-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white
+[SITE-url]: https://www.kgio.dev
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[TYPESCRIPT]: https://img.shields.io/badge/TypeScript-F7DF1E?style=for-the-badge&logo=typescript&logoColor=black
+[TYPESCRIPT-url]: https://www.typescriptlang.org
+[POSTCSS]: https://img.shields.io/badge/PostCSS-FFFFFF?style=for-the-badge&logo=PostCSS&logoColor=FF5733
+[POSTCSS-url]: https://postcss.org
+[STREAM]: https://img.shields.io/badge/STREAM.IO-1A3EE1?style=for-the-badge&logo=Streamlit&logoColor=FFFFFF
+[STREAM-url]: https://getstream.io/chat/
+[TWILIO]: https://img.shields.io/badge/TWILIO-FFFFFF?style=for-the-badge&logo=Twilio&logoColor=FF5733
+[TWILIO-url]: https://www.twilio.com
